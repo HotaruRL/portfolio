@@ -72,26 +72,44 @@ section{
 .sec1{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: aqua;
 }
 
 .sec2{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: beige;
 }
 
 .sec3{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: cadetblue;
 }
 
 .sec4{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: darkblue;
 }
 
 .sec5{
     display: none;
     transform: translateY(0) scale(1);
+    background-color: firebrick;
+}
+
+.active{
+    display: block;
+    animation: scaleAnim 1s ease-in-out;
+    @keyframes scaleAnim {
+        0%{
+            transform: translateY(-100%) scaleY(0)
+        }
+        100%{
+            transform: translateY(0%) scaleY(1)
+        }
+    }
 }
 
 // adjust all controls (buttons)
