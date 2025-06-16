@@ -9,7 +9,7 @@
 }
 
 :root {
-  --fontfamily: "Poppins", sans-serif;
+  --fontfamily: "Poppins";
   --colorprimary1: hsl(0 0% 98%);
   --colorprimary2: hsl(0 0% 100%);
   --coloraccent1: hsl(342 88% 68%);
@@ -18,10 +18,10 @@
   --colorbackground: hsla(0 0% 0% / 0.8);
   --colorgradient1: linear-gradient(to right, hsl(342 88% 68%), hsl(0 100% 89%));
   --colorgradient1-reversed: linear-gradient(to right, hsl(0 100% 89%), hsl(342 88% 68%));
-  --h1: bold 54px/60px var(-ff);
-  --h2: bold 36px/48px var(-ff);
-  --h3: bold 24px/36px var(-ff);
-  --transition1: 0.3s ease-in-out;
+  --h1: bold 5.61rem/1.6 var(--fontfamily);
+  --h2: bold 4.209rem/1.6 var(--fontfamily);
+  --h3: bold 3.157rem/1.6 var(--fontfamily);
+  --transition1: all 0.4s ease-in-out;
 }
 
 header {
@@ -101,10 +101,10 @@ li a:hover::before {
 
 svg {
   cursor: pointer;
-  fill: none;
+  fill: var(--colorbody);
   width: 2rem;
-  stroke: var(--colorprimary1);
-  stroke-width: 10;
+  stroke: var(--colorbody);
+  stroke-width: 10px;
   transition: var(--transition1);
 }
 
@@ -115,4 +115,106 @@ svg:hover {
 
 .menu-icon {
   display: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 8rem 12%;
+  width: 100%;
+  position: relative;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about img {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+}
+
+.about .about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.info-box .text h3 {
+  font: var(--h3);
+}
+
+.info-box h1 {
+  font: var(--h1);
+}
+
+.info-box span {
+  font: var(--h3);
+  background: var(--colorgradient1);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.btn-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  border-radius: 3rem;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--colorbody);
+  cursor: pointer;
+  font-weight: 500;
+  text-wrap: nowrap;
+  transition: var(--transition1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn:hover {
+  color: var(--colorprimary1);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--colorgradient1);
+  z-index: -1;
+  transition: var(--transition1);
+}
+
+.btn:hover::before {
+  width: 100%;
+}
+
+.socials {
+  cursor: pointer;
+  transition: var(--transition1);
+}
+.socials svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+.socials svg:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=styles.css.map */

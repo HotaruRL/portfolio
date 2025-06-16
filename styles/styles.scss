@@ -10,7 +10,7 @@
 
 // VARIABLES
 :root{
-    --fontfamily: "Poppins", sans-serif;
+    --fontfamily: "Poppins";
 
     --colorprimary1: hsl(0 0% 98%);
     --colorprimary2: hsl(0 0% 100%);
@@ -21,11 +21,11 @@
     --colorgradient1: linear-gradient(to right, hsl(342 88% 68%), hsl(0 100% 89%));
     --colorgradient1-reversed: linear-gradient(to right, hsl(0 100% 89%), hsl(342 88% 68%));
 
-    --h1: bold 54px/60px var(-ff); //font-weight | font-size/line-height | font-family
-    --h2: bold 36px/48px var(-ff);
-    --h3: bold 24px/36px var(-ff);
+    --h1: bold 5.61rem/1.6 var(--fontfamily); //font-weight | font-size/line-height | font-family
+    --h2: bold 4.209rem/1.6 var(--fontfamily);
+    --h3: bold 3.157rem/1.6 var(--fontfamily);
 
-    --transition1: 0.3s ease-in-out;
+    --transition1: all 0.4s ease-in-out;
 }
 
 // HEADER SECTION
@@ -66,7 +66,7 @@ header{
     gap: 2rem;
 }
 li a{
-    position: relative;
+    position: relative; // tell the ::before to position inside this element
     color: var(--colorprimary1);
     font-weight: 300;
 }
@@ -106,10 +106,10 @@ li a:hover::before{
 // SVG Images/Buttons
 svg{
     cursor: pointer;
-    fill: none;
+    fill: var(--colorbody);
     width: 2rem;
-    stroke: var(--colorprimary1);
-    stroke-width: 10;
+    stroke: var(--colorbody);
+    stroke-width: 10px;
     transition: var(--transition1);
 }
 svg:hover{
@@ -118,4 +118,96 @@ svg:hover{
 }
 .menu-icon{
     display: none; //TEMP HIDING BUTTON
+}
+
+section{
+    min-height: 100vh; // cover the entire page
+    padding: 8rem 12%; //top-bottom | left-right
+    width: 100%;
+    position: relative;
+}
+
+// ABOUT SECTION
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about img{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+}
+.about .about-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+// TEXT
+.info-box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.info-box .text h3{
+    font: var(--h3);
+}
+.info-box h1{
+    font: var(--h1);
+}
+.info-box span{
+    font: var(--h3);
+    background: var(--colorgradient1);
+    // clip background within the text area, then make text transparent to show the background
+    background-clip: text;
+    color: transparent;
+}
+// DOWNLOAD + CONTACT BUTTON
+.btn-group{
+    display: flex;
+    gap: 1rem;
+}
+.btn{
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--colorbody);
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: var(--transition1);
+    position: relative; // tell the ::before to position inside the button
+    overflow: hidden; //hide the colored layer before the hover, clipping anything that goes outside the button's rounded corners
+    z-index: 1; // make sure the text stays on top of the sliding color
+}
+.btn:hover{
+    color: var(--colorprimary1);
+}
+.btn::before{
+    content: '';
+    position: absolute; // positions the layer within the button
+    top: 0; left: 0; //starts at the top-left corner
+    width: 0%; // starts off with nothing
+    height: 100%; // makes it fill the entire button
+    background: var(--colorgradient1);
+    z-index: -1; // places color layer behind the text
+    transition: var(--transition1);
+}
+.btn:hover::before{
+    width: 100%; // fills the whole width of the button
+}
+// SOCIAL MEDIA BUTTONS
+.socials{
+    cursor: pointer;
+    transition: var(--transition1);
+    svg{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+.socials svg:hover{
+    transform: scale(1.1);
 }
