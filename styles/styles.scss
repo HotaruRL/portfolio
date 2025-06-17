@@ -220,6 +220,42 @@ section{
     transform: scale(1.1);
 }
 
+// PROJECTS SECTION
+.projects-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.project-card{
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    border: 2px solid var(--colorbody);
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: var(--transition1);
+}
+.project-card:hover{
+    background-color: var(--colorbody);
+    color: var(--colorprimary1);
+    transform: translateY(-10px) scale(1.02);
+}
+.project-card img{
+    width: 20vw;
+    border: 8px solid var(--coloraccent1);
+    border-radius: 1.5rem;
+}
+.project-card:hover .btn{
+    border: 2px solid var(--colorprimary2);
+    color: var(--colorprimary1);
+}
+.project-card h3{
+    font: var(--h4);
+}
 
 // EXPERIENCE SECTION
 .section-title{
