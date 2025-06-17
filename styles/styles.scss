@@ -249,13 +249,20 @@ section{
     border: 8px solid var(--coloraccent1);
     border-radius: 1.5rem;
 }
+.project-card a{
+    color: var(--colorbody);
+}
 .project-card:hover .btn{
     border: 2px solid var(--colorprimary2);
+    color: var(--colorprimary1);
+}
+.project-card:hover a{
     color: var(--colorprimary1);
 }
 .project-card h3{
     font: var(--h4);
 }
+
 
 // EXPERIENCE SECTION
 .section-title{
@@ -304,6 +311,64 @@ section{
     background: var(--colorgradient1-reversed);
     background-clip: text;
     color: transparent;
+}
+
+
+// CONTACT SECTION
+.input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+.input-box input{
+    border-radius: 3rem;
+    border: 2px solid var(--colorbody);
+    padding: 2rem 8rem;
+    font: var(--h6);
+}
+.input-box input::placeholder{
+    font: var(--h6);
+}
+.input{
+    position: relative;
+}
+.input svg{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 50%;
+    left: 5px;
+    transform: translate(50%, -50%);
+}
+
+// FOOTER SECTION
+footer{
+    bottom: 0;
+    left: 0;
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+footer ul{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+footer ul li a{
+    color: var(--colorbody);
+    font: var(--h6);
+}
+.copyright{
+    font-size: 300;
+    margin-top: 2rem;
 }
 
 //SCROLL BAR
